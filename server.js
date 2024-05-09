@@ -11,10 +11,15 @@ app.set('view engine', 'ejs')
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
+const authController = require('./controllers/auth.js')
+
 /*----------------Middleware------------------- */
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(express.static('public'))
+/*---------------------server---------------------------*/
+const isSignedIn = require('./middleware/is-signed-in.js')
+const passUserToView = require('./middleware/pass-user-to-view.js')
 /*----------------MongoDB Connection------------------- */
 mongoose.connect(process.env.MONGODBURI);
 mongoose.connection.on("connected", () => {
@@ -23,7 +28,12 @@ mongoose.connection.on("connected", () => {
 
 app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true,}));
 
+app.use(passUserToView)
+
 app.get('/', (req,res) => {res.render('index')})
+
+app.use('/auth', authController)
+app.use(isSignedIn)
 /*----------------Port connection------------------- */
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
