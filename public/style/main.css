@@ -1,0 +1,27 @@
+* {
+    margin: 5;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+    text-align: center;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: wheat;
+    > a{
+        font-size: 30px;
+        color: black;
+        padding: 3px;
+        margin: auto 2px;
+        text-decoration: none
+    }
+    > a:hover{
+        background-color: rgba(10, 10, 10, .3);
+    }
+
+}

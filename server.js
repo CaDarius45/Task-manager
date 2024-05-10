@@ -12,6 +12,8 @@ app.set('view engine', 'ejs')
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 const authController = require('./controllers/auth.js')
+const usersController = require('./controllers/users.js')
+const accountController = require('./controllers/accounts.js')
 
 /*----------------Middleware------------------- */
 app.use(express.urlencoded({ extended: false }));
@@ -30,10 +32,12 @@ app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitia
 
 app.use(passUserToView)
 
-app.get('/', (req,res) => {res.render('index')})
+app.get('/', (req,res) => {if (req.session.user) {res.redirect(`/users/${req.session.user.id}/users`)} else {res.render('index')}})
 
 app.use('/auth', authController)
 app.use(isSignedIn)
+app.use('/users/:userId/users',usersController)
+app.use('/users/:userId/account',accountController)
 /*----------------Port connection------------------- */
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);

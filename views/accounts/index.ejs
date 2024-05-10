@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <h1><%=useres.username%> Account</h1>
+    <ul>
+      <li><%=useres.account.name%></li>
+      <li><%=useres.account.age%></li>
+      <li><%=useres.account.gender%></li>
+      <li><%=useres.account.info%></li>
+    </ul>
+  </body>
+</html>
