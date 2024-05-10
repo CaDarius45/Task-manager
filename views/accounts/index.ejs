@@ -3,16 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/main.css" rel="stylesheet">
     <title>My Account</title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1><%=useres.username%> Account</h1>
-    <ul>
-      <li><%=useres.account.name%></li>
-      <li><%=useres.account.age%></li>
-      <li><%=useres.account.gender%></li>
-      <li><%=useres.account.info%></li>
-    </ul>
+    <h1><%=users.username%> Account</h1>
+    <main>
+        <ul>
+            <li><%=users.account.name%></li>
+            <li><%=users.account.age%></li>
+            <li><%=users.account.gender%></li>
+            <li><%=users.account.info%></li>
+            </ul>
+    </main>
+    <form action="/users/<%= users._id %>/account/edit" method="GET">
+        <button type="submit">edit your account</button>
+      </form>
+      <form action="/users/<%= users._id %>/account?_method=DELETE" method="POST">
+        <button type="submit">Delete your account</button>
+      </form>
   </body>
 </html>

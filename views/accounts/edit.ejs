@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a IteM</title>
+</head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <h1>Edit your account</h1>
+
+    <form action="/users/<%= user._id %>/account?_method=PUT" method="POST">
+
+    <label for="user-name">First name: </label>
+    <input type="text" name="name" id="user-name" value="<%= use[0]%>">
+
+    <label for="user-name">Last name: </label>
+    <input type="text" name="name" id="user-name" value="<%= use[1]%>"><br>
+
+    <label for="user-age">Age: </label>
+    <input type="text" name="age" id="user-age" value="<%= user.age%>"><br>
+
+    <label for="user-gender">gender: </label>
+    <input type="text" name="gender" id="user-gender" value="<%= user.gender%>"><br>
+
+    <label for="user-info">Info: </label>
+    <textarea  name="info" id="user-info" rows="4" cols="30"><%= user.info%>"</textarea><br>
+
+    <button type="submit"> Submit</button>
+  </form>
+  
+  </body>
+</html>

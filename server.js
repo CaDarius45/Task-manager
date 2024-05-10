@@ -19,6 +19,7 @@ const accountController = require('./controllers/accounts.js')
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(express.static('public'))
+app.use(methodOverride('_method'));
 /*---------------------server---------------------------*/
 const isSignedIn = require('./middleware/is-signed-in.js')
 const passUserToView = require('./middleware/pass-user-to-view.js')

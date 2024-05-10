@@ -31,7 +31,6 @@ router.get('/sign-up', (req, res) => {
       await User.create(req.body);
       res.redirect('/auth/sign-in');
     } catch (error) {
-      console.log(`Create user: ${error}`);
       res.redirect('/');
     }
   });
@@ -47,7 +46,6 @@ router.get('/sign-up', (req, res) => {
         req.session.user = {username: userInDatabase.username, _id: userInDatabase._id};
         res.redirect('/');
     } catch (error) {
-      console.log(`Check user: ${error}`);
       res.redirect('/');
     }
   });
