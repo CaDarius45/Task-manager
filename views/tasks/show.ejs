@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/main.css" rel="stylesheet">
+    <title>show task</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <h1>task details</h1>
+    <main>
+        <h4><%=task.name %></h4>
+        <br>
+        
+        <p>Info: <%=task.description%></p>
+        <br>
+
+        <form action="/users/<%= task.owner._id %>/task/<%=task._id%>/edit" method="GET">
+        <button type="submit">edit this task</button> 
+        </form>
+        <form action="/users/<%= task.owner._id %>/task/<%=task._id%>?_method=DELETE" method="POST">
+        <button type="submit">delete task</button> 
+        </form>
+    </main>
+    
+  </body>
+</html>

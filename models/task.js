@@ -7,4 +7,4 @@ const taskSchema = mongoose.Schema({
   owner: {type: mongoose.Schema.Types.ObjectId,ref: 'User'}
 })
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Task', taskSchema);

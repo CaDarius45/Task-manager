@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/main.css" rel="stylesheet">
+    <title>crate task</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <h1>crate your task</h1>
+    <main>
+        <form action="/users/<%= user._id %>/task" method="POST">
+
+            <label for="task-name">task name: </label>
+            <input type="text" name="name" id="task-name">
+        
+            <label for="task-info">Info: </label>
+            <textarea  name="description" id="task-info" rows="4" cols="30"></textarea><br>
+        
+            <button type="submit">create task</button> 
+      </form>
+    </main>
+    
+  </body>
+</html>

@@ -53,8 +53,7 @@ router.put('/', async (req, res) => {
 //DELETE
 router.delete('/', async (req, res) => {
     try {
-        console.log('DELETE')
-      const currentUser = await User.findById(req.session.user._id).populate('account');
+      const currentUser = await User.findById(req.locals.user._id).populate('account');
       currentUser.account.deleteOne();
       await currentUser.save();
       res.redirect('/auth/sign-out');

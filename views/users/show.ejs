@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/style/main.css" rel="stylesheet">
-    <title>Users</title>
+    <title><%= user.username %>></title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1>Welcome user</h1>
+    <h1><%= user.username %> page</h1>
     <main>
       <ul>
-      <% users.forEach((useres)=>{ %>
-        <li><a href="/users/<%= user._id %>/users/<%=useres._id%>"><%=useres.username%></a></li>
+      <% task.forEach((tas)=>{ %>
+        <li><%=tas.name%></li>
         <% }) %>
       </ul>
     </main>

@@ -14,6 +14,7 @@ const port = process.env.PORT ? process.env.PORT : '3000';
 const authController = require('./controllers/auth.js')
 const usersController = require('./controllers/users.js')
 const accountController = require('./controllers/accounts.js')
+const taskController = require('./controllers/tasks.js')
 
 /*----------------Middleware------------------- */
 app.use(express.urlencoded({ extended: false }));
@@ -39,6 +40,7 @@ app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/users',usersController)
 app.use('/users/:userId/account',accountController)
+app.use('/users/:userId/task',taskController)
 /*----------------Port connection------------------- */
 app.listen(process.env.PORT, () => {
     console.log(`Listening on port ${process.env.PORT}`);
