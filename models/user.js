@@ -4,7 +4,8 @@ const accountSchema = mongoose.Schema({
   name: {type: String, required: true},
   age: Number,
   gender: String,
-  info: String
+  info: String,
+  picture: String,
 })
 
 const userSchema = mongoose.Schema({

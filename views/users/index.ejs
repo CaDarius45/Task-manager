@@ -7,22 +7,15 @@
     <link href="/style/profile">
     <title>Users</title>
   </head>
-  <style>
-body{
-  background-image: url('footbridge.jpg');
-}
-
-  </style>
   <body>
     <%- include('../partials/navbar') %>
-    <img src="/public/assets/profile/flying.jpg" alt="nothing">
     <h1>Welcome user</h1>
     <main>
       <section id="userMenu">
       <% users.forEach((useres)=>{ %> 
         <a href="/users/<%= user._id %>/users/<%=useres._id%>">
           <div class="tasks">
-            <div class="profilePictures"></div>
+            <div class="profilePictures" style="background-image: url('<%=useres.account.picture%>');"></div>
             <%=useres.username%><br><%=useres.account.name%>
           </div>
         </a>

@@ -44,8 +44,8 @@ main{
 }
 
 #profilePicture{
-    background: url('../assets/profile/cat.png')center center ;
     background-size: cover;
+    background-position: center;
     width: 30%;
     aspect-ratio: 1/1;
     border-radius: 50%;

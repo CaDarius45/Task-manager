@@ -3,13 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 const backgrounds = [ 
-  "../assets/profile/flying.jpg",
-  "../assets/profile/cat.jpg",
-  "../assets/profile/corgi.jpg",
-  "../assets/profile/joy.jpg"
+  "/assets/profile/flying.jpg",
+  "/assets/profile/cat.png",
+  "/assets/profile/corgi.png",
+  "/assets/profile/joy.jpg"
 ]
-
-
 
 //index
 router.get('/', async (req, res) => {

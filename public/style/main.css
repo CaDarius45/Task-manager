@@ -7,15 +7,15 @@
 }
 
 body{
-    
+    background-image: url('/assets/profile/cat.png');
     text-align: center;
 }
 
 main{
-    background-color: rgba(200, 200, 200, .7);width: 75vw;
+    background-color: rgba(200, 200, 200, .7);
+    width: 75vw;
     margin: auto;
-    width: 35vw;
-    padding: 2rem 3rem;
+    width: 35vw; 
     border-radius: 1rem;
 }
 
@@ -49,6 +49,8 @@ main{
 }
 
 .profilePictures{
+    background-size: cover;
+    background-position: center;
     width: 80%;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -76,6 +78,12 @@ main{
 #selUser{
 display: flex;
 background-color: white;
+width: 600px;
+    height: 400px;
+    border: 2px solid white;
+    box-shadow: black 10px 10px;
+    border-radius: 10%;
+    overflow: auto;
 }
 
 #userTask{

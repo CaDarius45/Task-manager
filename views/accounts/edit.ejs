@@ -10,18 +10,19 @@
     <%- include('../partials/navbar') %>
     <h1>Edit your account</h1>
   <main> 
+    <div id="profilePicture" ></div>
     <form action="/users/<%= user._id %>/account?_method=PUT" method="POST">
-
-      <label for="rating"id="profilePicture">fuck       you </label>
-      <select name="rating" id="rating"></select>
-      <% pic.forEach((pi)=>{ %> 
-        <option value="<%=pi%>"><%=pi%></option>
-    <% }) %>
-      
       <section  id="topProfile">
-        
+        <label for="pictures">pic</label>
+        <select name="picture" id="pictures">
+          <option value="none" selected disabled hidden></option>
+          <% pic.forEach((pi)=>{ %> 
+            <option value="<%=pi%>"><%=pi%></option>
+        <% }) %>
+        </select>
 
-        <label for="user-name">'<%= pic[0] %>': </label>
+
+        <label for="user-name">Firs name: </label>
         <input type="text" name="name" id="user-name" value="<%= use[0]%>">
   
         <label for="user-name">Last name: </label>
