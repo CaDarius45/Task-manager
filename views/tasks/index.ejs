@@ -15,7 +15,8 @@
             <%} else { %>
       <ul>
         <% task.forEach((tas)=>{ %>
-            <li> <a href="/users/<%= tas.owner._id %>/task/<%=tas._id%>"><%=tas.name%></a></li>
+          <div>
+            <li> <a href="/users/<%= tas.owner._id %>/task/<%=tas._id%>"><%=tas.name%></a></li></div>
             <% }) %>
       </ul>
       <% } %>

@@ -2,6 +2,15 @@ const User = require('../models/user.js');
 const express = require('express');
 const router = express.Router();
 
+const backgrounds = [ 
+  "../assets/profile/flying.jpg",
+  "../assets/profile/cat.jpg",
+  "../assets/profile/corgi.jpg",
+  "../assets/profile/joy.jpg"
+]
+
+
+
 //index
 router.get('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id)
@@ -31,7 +40,7 @@ router.get('/edit', async (req, res) => {
         const currentUser = await User.findById(res.locals.user._id).populate('account');
         const curAco = currentUser.account
         const name = curAco.name.split(" ")
-        res.render('accounts/edit',{user: curAco, use: name})
+        res.render('accounts/edit',{user: curAco, use: name,pic: backgrounds})
     } catch (error) {
         console.log(`Account Edit:${error}`);
         res.redirect('/account')

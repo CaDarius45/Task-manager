@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/style/main.css" rel="stylesheet">
+    <link href="/style/profile">
     <title>Users</title>
   </head>
+  <style>
+body{
+  background-image: url('footbridge.jpg');
+}
+
+  </style>
   <body>
     <%- include('../partials/navbar') %>
+    <img src="/public/assets/profile/flying.jpg" alt="nothing">
     <h1>Welcome user</h1>
     <main>
-      <ul>
-      <% users.forEach((useres)=>{ %>
-        <li><a href="/users/<%= user._id %>/users/<%=useres._id%>"><%=useres.username%></a></li>
-        <% }) %>
-      </ul>
+      <section id="userMenu">
+      <% users.forEach((useres)=>{ %> 
+        <a href="/users/<%= user._id %>/users/<%=useres._id%>">
+          <div class="tasks">
+            <div class="profilePictures"></div>
+            <%=useres.username%><br><%=useres.account.name%>
+          </div>
+        </a>
+    <% }) %>
+    </section>
     </main>
     
   </body>

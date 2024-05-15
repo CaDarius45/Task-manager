@@ -1,0 +1,60 @@
+* {
+    margin: 5;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: lightblue;
+    text-align: center;
+}
+
+main{
+    background-color: rgba(200, 200, 200, .7);width: 75vw;
+    margin: auto;
+    width: 35vw;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    border: 2px ridge white;
+    box-shadow: black 2px 2px;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: wheat;
+    > a{
+        font-size: 30px;
+        color: black;
+        padding: 3px;
+        margin: auto 2px;
+        text-decoration: none
+    }
+    > a:hover{
+        background-color: rgba(10, 10, 10, .3);
+    }
+}
+
+#topProfile{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(10, 10, 10, .3);
+}
+
+#profilePicture{
+    background: url('../assets/profile/cat.png')center center ;
+    background-size: cover;
+    width: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 5px ridge black ;
+    font-size: 64px;
+    text-align: center;
+}
+
+#lowProfile{
+    background-color: darkgray;
+    font-weight: bold;
+}

@@ -7,10 +7,46 @@
 body{
     background-color: gray;
     text-align: center;
+    background: url('../assets/background/footbridge.jpg') center center fixed;
+    background-size: cover;
+}
+
+h1{
+    font-family: "Sedan SC", serif;
+}
+
+form{
+    border: 5px ridge yellow;
+    background-color: rgba(20, 200, 200, .9);
+    margin: auto;
+    width: 35vw;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+}
+
+label{
+    font-weight: bold;
+    text-shadow: white .5px 0px;
+}
+
+button{
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: lightgray 0px 9px;
+}
+button:hover{
+    transform:  translate(0px, 3px);
+    box-shadow: gray 0px 6px;
+}
+button:active{
+    transform:  translate(0px, 6px);
+    box-shadow: black 0px 3px;
 }
 
 #navbar{
     display: flex;
+    border-radius: 10%;
     justify-content: space-evenly;
     background-color: wheat;
     > a{

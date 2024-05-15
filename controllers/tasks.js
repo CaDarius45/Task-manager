@@ -3,7 +3,6 @@ const User = require('../models/user.js');
 const express = require('express');
 const router = express.Router();
 
-
 //index
 router.get('/', async (req, res) => {
     try {

@@ -10,11 +10,15 @@
     <%- include('../partials/navbar') %>
     <h1><%= user.username %> page</h1>
     <main>
+      <section id="selUser">
       <ul>
       <% task.forEach((tas)=>{ %>
         <li><%=tas.name%></li>
+        <div id="userTask">
+        <li><%=tas.descrption%></li></div>
         <% }) %>
       </ul>
+    </section>
     </main>
     
   </body>

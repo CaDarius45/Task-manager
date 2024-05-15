@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
   <link href="/style/auth.css" rel="stylesheet">
   <title>Sign In</title>
 </head>
 <body>
+  <%- include('../partials/navbar') %>
   <h1>Sign in please</h1>
   <form action="/auth/sign-in" method="POST">
     <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
+    <input type="text" name="username" id="username" required /><br>
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
+    <input type="password" name="password" id="password" required /><br>
     <button type="submit">Sign in</button>
   </form>
 </body>

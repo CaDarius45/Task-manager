@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id).populate('account')
     if (currentUser.account) {
         const allUsers = await User.find()
-        res.render('users/index', {users: allUsers,user: currentUser})
+        const users = allUsers.filter(xuser => xuser.id !== currentUser.id)
+        res.render('users/index', {users: users,user: currentUser})
     }else{
         res.render('accounts/new', {users: currentUser})
     }

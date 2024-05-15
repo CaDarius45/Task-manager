@@ -3,20 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/style/main.css" rel="stylesheet">
+    <link href="/style/users.css" rel="stylesheet">
     <title>My Account</title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1><%=users.username%> Account</h1>
-    <main>
+    <h1><%=users.username%></h1>
+    <main> 
+      <section id="topProfile">
+      <div id="profilePicture"></div>
+      <h3><%=users.account.name%></h3>
+    </section>
+    <p >fuck</p>
+    <section id="lowProfile">
         <ul>
-            <li><%=users.account.name%></li>
+          <h4>Age</h4>
             <li><%=users.account.age%></li>
+          <h4>gender/pronouns</h4>
             <li><%=users.account.gender%></li>
+          <h4>info</h4>
             <li><%=users.account.info%></li>
-            </ul>
+        </ul>
     </main>
+  </section>
     <form action="/users/<%= users._id %>/account/edit" method="GET">
         <button type="submit">edit your account</button>
       </form>
