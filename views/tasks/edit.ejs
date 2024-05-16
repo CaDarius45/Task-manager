@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/style/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="/style/task.css" rel="stylesheet">
     <title>edit task</title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1>edit your task</h1>
-    <main>
+    <main id="editMain">
+      <h1>edit your task</h1>
         <form action="/users/<%= task.owner._id %>/task/<%=task._id%>?_method=PUT" method="POST">
 
-            <label for="task-name">task name: </label>
-            <input type="text" name="name" id="task-name" value="<%=task.name %>"><br>
+          <label for="task-name">task name: </label>
+          <input type="text" name="name" id="task-name" value="<%=task.name %>"><br>
         
-            <label for="task-info">Info: </label>
-            <textarea  name="description" id="task-info" rows="4" cols="30"><%=task.description%></textarea><br>
+          <label for="task-info">Info: </label>
+          <textarea  name="description" id="task-info" rows="4" cols="30"><%=task.description%></textarea><br>
+
+          <label for="task-is-done">Complete: </label>
+          <input type="checkbox" name="complete" id="task-is-done" <% if (task.complete) { %>checked<% } %>><br>
         
             <button type="submit">edit task</button> 
       </form>

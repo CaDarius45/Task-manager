@@ -7,7 +7,9 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try {
         const tasks = await Task.find({owner: res.locals.user._id}).populate('owner')
-        res.render('tasks/index', {task: tasks})
+        const completeTask = tasks.filter(tas => (tas.complete))
+        const uncompleteTask = tasks.filter(tas => (!tas.complete))
+        res.render('tasks/index', {task: tasks,cTask: completeTask,uTask: uncompleteTask})
     } catch (error) {
         console.log(`Task index: ${error}`);
         res.redirect(`/users/${res.locals.user._id}/task`);
@@ -46,6 +48,7 @@ router.get('/:taskId/edit', async (req, res) => {
   //update
 router.put('/:taskId', async (req, res) => {
     try {
+      req.body.complete = req.body.complete == 'on'? 'true': 'false';
       const tasks = await Task.findById(req.params.taskId);
       await tasks.updateOne(req.body)
       await tasks.save()

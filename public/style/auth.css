@@ -15,10 +15,19 @@ h1{
     font-family: "Sedan SC", serif;
 }
 
+main{
+    margin: 5rem auto;
+    border: 5px ridge yellow;
+    background-color: rgba(20, 200, 200, .9);
+    width: 25vw;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+}
+
 form{
     border: 5px ridge yellow;
     background-color: rgba(20, 200, 200, .9);
-    margin: auto;
+    margin: 2rem auto;
     width: 35vw;
     padding: 2rem 3rem;
     border-radius: 1rem;
@@ -30,6 +39,7 @@ label{
 }
 
 button{
+    margin-top: 1rem;
     padding: 10px;
     width: fit-content;
     height: fit-content;
@@ -45,8 +55,10 @@ button:active{
 }
 
 #navbar{
+    margin: auto;
     display: flex;
     border-radius: 10%;
+    width: 25vw;
     justify-content: space-evenly;
     background-color: wheat;
     > a{

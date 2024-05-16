@@ -5,7 +5,7 @@ const accountSchema = mongoose.Schema({
   age: Number,
   gender: String,
   info: String,
-  picture: String,
+  picture: String
 })
 
 const userSchema = mongoose.Schema({

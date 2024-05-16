@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/style/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="/style/task.css" rel="stylesheet">
     <title>crate task</title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1>crate your task</h1>
-    <main>
+    <main id="newMain">
+      <h1>crate your task</h1>
         <form action="/users/<%= user._id %>/task" method="POST">
 
             <label for="task-name">task name: </label>
-            <input type="text" name="name" id="task-name">
+            <input type="text" name="name" id="task-name"><br>
         
             <label for="task-info">Info: </label>
             <textarea  name="description" id="task-info" rows="4" cols="30"></textarea><br>

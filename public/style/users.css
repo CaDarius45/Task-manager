@@ -9,6 +9,12 @@
 body{
     background-color: lightblue;
     text-align: center;
+    
+}
+
+#wallpaper{
+    background-size: cover;
+    background-position: center;
 }
 
 main{
@@ -19,6 +25,7 @@ main{
     border-radius: 1rem;
     border: 2px ridge white;
     box-shadow: black 2px 2px;
+    backdrop-filter: blur(3px);
 }
 
 #navbar{
@@ -57,4 +64,29 @@ main{
 #lowProfile{
     background-color: darkgray;
     font-weight: bold;
+}
+
+select{
+    appearance: none;
+    background-size: cover;
+    background-position: center;
+    width: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 5px ridge black ;
+}
+
+.test{
+    width: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: aqua;
+    border: 5px ridge black ;
+}
+
+option{
+   width: 100px;
+   height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
 }

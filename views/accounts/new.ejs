@@ -6,14 +6,26 @@
   <link href="/style/users.css" rel="stylesheet">
   <title>Add a IteM</title>
 </head>
+<style>
+ 
+</style>
   <body>
     <%- include('../partials/navbar') %>
     <h1>Create an account</h1>
-
+    
+<main>
     <form action="/users/<%= user._id %>/account" method="POST">
 
+        <label for="user-pictures"></label>
+        <select name="picture" id="user-pictures" style="background-image: url('<%=pic[6]%>');">
+        <option value="none" selected disabled hidden ></option>
+        <%let i = 0; let u = "black"; pic.forEach((pi)=>{ %> 
+          <div class="test"><option value="<%=pi%>"><%=i++%></option></div>
+        <% }) %>
+        </select><br>
+
     <label for="user-name">First name: </label>
-    <input type="text" name="name" id="user-name">
+    <input type="text" name="name" id="user-name"><br> 
 
     <label for="user-name">Last name: </label>
     <input type="text" name="name" id="user-name"><br>
@@ -29,6 +41,6 @@
 
     <button type="submit">create account</button>
   </form>
-  
+</main>
   </body>
 </html>

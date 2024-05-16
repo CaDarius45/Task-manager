@@ -6,8 +6,21 @@ const backgrounds = [
   "/assets/profile/flying.jpg",
   "/assets/profile/cat.png",
   "/assets/profile/corgi.png",
-  "/assets/profile/joy.jpg"
+  "/assets/profile/joy.jpg", 
+  "/assets/profile/boy.png", 
+  "/assets/profile/flower.jpg", 
+  "/assets/profile/girl.png"
 ]
+
+// const backgrounds =  {
+//   fly: "/assets/profile/flying.jpg",
+//   cat: "/assets/profile/cat.png",
+//   dog: "/assets/profile/corgi.png",
+//   joy: "/assets/profile/joy.jpg", 
+//   man: "/assets/profile/boy.png", 
+//   flower: "/assets/profile/flower.jpg", 
+//   lady: "/assets/profile/girl.png"
+// }
 
 //index
 router.get('/', async (req, res) => {
@@ -18,6 +31,11 @@ router.get('/', async (req, res) => {
         console.log(`Account index :${error}`); 
         res.redirect(`/users/${res.locals.user._id}/recipes`);
       }
+});
+//New 
+router.get("/new", (req, res) => {
+  console.log(backgrounds)
+  res.render('accounts/new', {pic: backgrounds})
 });
 //CREATE
 router.post('/', async (req, res) => {

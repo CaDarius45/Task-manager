@@ -3,26 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/style/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="/style/task.css" rel="stylesheet">
     <title>Users</title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1>Your Task</h1>
-    <main>
-        <% if(task.length == 0){%>
-            <p>There are no task</p>
-            <%} else { %>
+    <main id="taskMain">
+      <h1>Your Task</h1>
       <ul>
-        <% task.forEach((tas)=>{ %>
-          <div>
-            <li> <a href="/users/<%= tas.owner._id %>/task/<%=tas._id%>"><%=tas.name%></a></li></div>
-            <% }) %>
+        <% if(task.length == 0){%>
+            <li>There are no task</li>
+        <%} else {%>
+
+
+        <h2>uncompleted task</h2>
+        <%let i = 0; uTask.forEach((tas)=>{ %>
+          <li id="li<%=(i % 2)%>"> <a href="/users/<%= tas.owner._id %>/task/<%=tas._id%>"><%=tas.name%></a></li>
+          <%(i++)%>
+        <% }) %>
+
+        <h2>completed task</h2>
+        <% cTask.forEach((tas)=>{ %> 
+          <li id="li<%=(i % 2)%>"> <a href="/users/<%= tas.owner._id %>/task/<%=tas._id%>"><%=tas.name%></a></li>
+          <%(i++)%>
+        <% }) %>
       </ul>
       <% } %>
     </main>
-    <form action="/users/<%= user._id %>/task/new" method="GET">
-        <button type="submit">Add new task</button>
+    <form action="/users/<%= user._id %>/task/new"  method="GET">
+        <button type="submit" id="newButton">Add new task</button>
       </form>
   </body>
 </html>

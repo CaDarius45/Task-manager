@@ -12,11 +12,11 @@
     <h1>Welcome user</h1>
     <main>
       <section id="userMenu">
-      <% users.forEach((useres)=>{ %> 
-        <a href="/users/<%= user._id %>/users/<%=useres._id%>">
+      <% use.forEach((us)=>{ %> 
+        <a href="/users/<%= user._id %>/users/<%=us._id%>">
           <div class="tasks">
-            <div class="profilePictures" style="background-image: url('<%=useres.account.picture%>');"></div>
-            <%=useres.username%><br><%=useres.account.name%>
+            <div class="profilePictures" style="background-image: url('<%=us.account.picture%>');"></div>
+            <%=us.username%><br><%=us.account.name%>
           </div>
         </a>
     <% }) %>
