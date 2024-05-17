@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
         const uncompleteTask = tasks.filter(tas => (!tas.complete))
         res.render('tasks/index', {task: tasks,cTask: completeTask,uTask: uncompleteTask})
     } catch (error) {
-        console.log(`Task index: ${error}`);
         res.redirect(`/users/${res.locals.user._id}/task`);
     }
 });
@@ -21,9 +20,13 @@ router.get('/new', (req, res) => {
 })
   // create
 router.post('/', async (req, res) => {
+  try {
     req.body.owner = req.session.user._id;
     await Task.create(req.body);
     res.redirect(`/users/${req.session.user._id}/task`);
+  } catch (error) {
+    res.redirect(`/users/${req.session.user._id}/task`);
+}
 });
   //show
 router.get('/:taskId', async (req, res) => {
@@ -31,7 +34,6 @@ router.get('/:taskId', async (req, res) => {
       const tasks = await Task.findById(req.params.taskId).populate('owner')
       res.render('tasks/show', {task: tasks});
     } catch (error) {
-      console.log(error);
       res.redirect(`/users/${res.locals.user._id}/task`);
     }
 });
@@ -41,7 +43,6 @@ router.get('/:taskId/edit', async (req, res) => {
       const tasks = await Task.findById(req.params.taskId);
       res.render('tasks/edit', {task: tasks,});
     } catch (error) {
-      console.log(error);
       res.redirect(`/users/${res.locals.user._id}/task`);
     }
 });
@@ -54,7 +55,6 @@ router.put('/:taskId', async (req, res) => {
       await tasks.save()
       res.redirect(`/users/${res.locals.user._id}/task`);
     } catch (error) {
-      console.log(error);
       res.redirect(`/users/${res.locals.user._id}/task`);
     }
 });
@@ -69,7 +69,6 @@ router.delete('/:taskId', async (req, res) => {
         res.send("You don't have permission to do that.");
       }
     } catch (error) {
-      console.log(error);
       res.redirect(`/users/${res.locals.user._id}/task`);
     }
 });

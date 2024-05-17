@@ -129,15 +129,6 @@ li{
     }
 }
 
-#newButton{
-    background-color: rgba(100, 100, 100, 0.1);
-    border: 1px solid black;
-    border-radius: 30%;
-    font-size: 30px;
-    padding: 2rem;
-    width: 15vw;
-}
-
 button{
     background-color: rgba(100, 100, 100, 0.1);
     border: 1px solid black;
@@ -151,37 +142,16 @@ button:hover{
     background-color: rgba(100, 100, 100, 0.6);
     cursor: pointer;
 }
-/* ============================================================ */
-.tasks{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    border: 2px solid white;
-    background-color: rgba(10, 10, 10, .3);
-    box-shadow: black 2px 10px;
-    border-radius: 10%;
-    margin: 10% ;
-    padding: 2rem 3rem;
-    width: 220px;
-    height: 220px;
-    font-size: 20px;
+
+#newButton{
+    background-color: rgba(100, 100, 100, 0.1);
+    border: 1px solid black;
+    border-radius: 30%;
+    font-size: 30px;
+    padding: 2rem;
+    width: 15vw;
 }
 
-#selUser{
-display: flex;
-background-color: white;
-width: 600px;
-    height: 400px;
-    border: 2px solid white;
-    box-shadow: black 10px 10px;
-    border-radius: 10%;
-    overflow: auto;
+#newButton:hover{
+    font-weight: bold;
 }
-#userTask{
-    justify-content: center;
-}
-
-#selUser:hover #userTask {
-    display: block;
-  }

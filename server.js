@@ -8,8 +8,6 @@ const session = require('express-session');
 const app = express();
 
 app.set('view engine', 'ejs')
-//app.set('public', 'public')
-
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 

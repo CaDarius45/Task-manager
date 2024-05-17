@@ -4,42 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/style/users.css" rel="stylesheet">
-  <title>Add a IteM</title>
+  <title>creating account</title>
 </head>
-<style>
- 
-</style>
   <body>
     <%- include('../partials/navbar') %>
     <h1>Create an account</h1>
-    
 <main>
     <form action="/users/<%= user._id %>/account" method="POST">
-
-        <label for="user-pictures"></label>
-        <select name="picture" id="user-pictures" style="background-image: url('<%=pic[6]%>');">
-        <option value="none" selected disabled hidden ></option>
-        <%let i = 0; let u = "black"; pic.forEach((pi)=>{ %> 
-          <div class="test"><option value="<%=pi%>"><%=i++%></option></div>
-        <% }) %>
-        </select><br>
-
-    <label for="user-name">First name: </label>
-    <input type="text" name="name" id="user-name"><br> 
-
-    <label for="user-name">Last name: </label>
-    <input type="text" name="name" id="user-name"><br>
-
-    <label for="user-age">Age: </label>
-    <input type="text" name="age" id="user-age"><br>
-
-    <label for="user-gender">gender: </label>
-    <input type="text" name="gender" id="user-gender"><br>
-
-    <label for="user-info">Info: </label>
-    <textarea  name="info" id="user-info" rows="4" cols="30"></textarea><br>
-
-    <button type="submit">create account</button>
+      <section  id="topProfile">
+        <div id="editProfile">
+                <label for="pictures" ></label>
+                <select name="picture" id="pictures">
+                  <option value="none" selected disabled hidden ></option>
+                  <option id="flying"  value="<%=pic[0]%>">flying</option>
+                  <option id="cat" value="<%=pic[1]%>">cat</option>
+                  <option id="corgi" value="<%=pic[2]%>">corgi</option>
+                  <option id="joy" value="<%=pic[3]%>">joy</option>
+                  <option id="boy" value="<%=pic[4]%>">boy</option>
+                  <option id="flower" value="<%=pic[5]%>">flower</option>
+                  <option  id="girl" value="<%=pic[6]%>">girl</option>
+                </select>
+        
+        
+                <label for="user-name">Firs name: </label>
+                <input type="text" name="name" id="user-name">
+          
+                <label for="user-name">Last name: </label>
+                <input type="text" name="name" id="user-name"><br>
+              </div>
+              </section>
+              <section id="lowProfile">
+                <label for="user-age">Age: </label>
+                <input type="text" name="age" id="user-age">
+        
+                <label for="user-gender">gender: </label>
+                <input type="text" name="gender" id="user-gender"><br>
+        
+                <label for="user-info">Info: </label>
+                <textarea  name="info" id="user-info" rows="4" cols="30"></textarea><br>
+              </section>
+            <button type="submit"> Create your account</button>
   </form>
 </main>
   </body>

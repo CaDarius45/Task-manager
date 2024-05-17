@@ -6,6 +6,10 @@
     text-decoration: none;
 }
 
+button{
+    cursor: pointer;
+}
+
 body{
     background-color: lightblue;
     text-align: center;
@@ -18,8 +22,13 @@ h1{
     border-bottom: 1px dashed antiquewhite;
 }
 
+h3{
+    border: 1px solid whitesmoke;
+    background-color: rgba(200, 200, 200, .7);
+}
+/* ========================Main================================= */
 main{
-    background-color: rgba(200, 200, 200, .7);width: 75vw;
+    background-color: rgba(200, 200, 200, .7);
     margin: auto;
     width: 35vw;
     padding: 2rem 3rem;
@@ -54,6 +63,23 @@ main{
     margin-bottom: 2rem;
 }
 
+#editProfile{
+    display: flex;
+    flex-direction: row;
+    > label{
+        margin: auto; 
+        font-weight: bold;
+    }
+
+    > input{
+        width: 7rem;
+        background: none;
+        border: none;
+        border-bottom: 1px solid black;
+        margin: auto;
+    }
+}
+
 #profilePicture{
     background-size: cover;
     background-position: center;
@@ -80,25 +106,30 @@ main{
         margin-top: 1rem;
         font-size: 14px;
     }
-}
 
+    > label{
+        margin: auto; 
+        font-weight: bold;
+
+    }
+
+    > input{
+        width: 5rem;
+        background: none;
+        border: none;
+        border-bottom: 1px solid black;
+        margin: auto;
+    }
+
+    > textarea{
+        background-color: rgba(200, 200, 200, .7);
+    } 
+}
+/* ==========================other elements====================== */
 #lowButtons{
     display: flex;
     justify-content: center;
     gap: 4%;
-    form > button{
-        margin-top: 5px;
-        background: none;
-        box-shadow: black 1px 1px;
-        width: 14rem;
-        font-size: 30px;
-    }
-
-    form > button:hover{
-        cursor: pointer;
-        font-weight: bold;
-    }
-
 }
 
 #pictures{
@@ -111,52 +142,80 @@ main{
     border: 5px ridge black ;
 }
 
-.test{
-    width: 30%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: aqua;
-    border: 5px ridge black ;
+button[type="submit"]{
+    font-size: 30px;
+    padding: 3px;
+    margin: 5px;
+    background: none;
+    border: none;
+    font-weight: bold;
 }
 
-option{
-   width: 100px;
-   height: 100px;
-    border: 2px solid black;
-    border-radius: 50%;
+button[type="submit"]:hover{
+text-shadow: white 1px 1px;
 }
 
+/* ----------------------------set profile picture------------------------------- */
+.flying{
+    background-image: url('/assets/profile/flying.jpg'); 
+}
+
+.cat{
+    background-image: url('/assets/profile/cat.png'); 
+}
+
+.corgi{
+    background-image: url('/assets/profile/corgi.png'); 
+}
+
+.joy{
+    background-image: url('/assets/profile/joy.jpg'); 
+}
+
+.boy{
+    background-image: url('/assets/profile/boy.png'); 
+}
+
+.flower{
+    background-image: url('/assets/profile/flower.jpg'); 
+}
+
+.girl{
+    background-image: url('/assets/profile/girl.png'); 
+}
+
+/* ------------------------set selected picture of user choice to view----------------------------------- */
 #pictures:has(#flying:checked){
     background-image: url('/assets/profile/flying.jpg'); 
+    content-visibility: hidden;
 }
 
 #pictures:has(#cat:checked){
     background-image: url('/assets/profile/cat.png'); 
+    content-visibility: hidden;
 }
 
 #pictures:has(#corgi:checked){
     background-image: url('/assets/profile/corgi.png'); 
+    content-visibility: hidden;
 }
 
 #pictures:has(#joy:checked){
     background-image: url('/assets/profile/joy.jpg'); 
+    content-visibility: hidden;
 }
 
 #pictures:has(#boy:checked){
     background-image: url('/assets/profile/boy.png'); 
+    content-visibility: hidden;
 }
 
 #pictures:has(#flower:checked){
     background-image: url('/assets/profile/flower.jpg'); 
+    content-visibility: hidden;
 }
 
 #pictures:has(#girl:checked){
     background-image: url('/assets/profile/girl.png'); 
+    content-visibility: hidden;
 }
-
-
-/* option::after{
-    color: red;
-    background-color: red;
-    background-image: url('/assets/profile/flying.jpg'); 
-} */

@@ -10,16 +10,18 @@
     <%- include('../partials/navbar') %>
     <h1><%=users.username%></h1>
     <main> 
-      <section id="topProfile" style="background-image: url('<%=users.account.picture%>');">
-      <div id="profilePicture" style="background-image: url('<%=users.account.picture%>');"></div>
+      <section id="topProfile" class="<%=users.account.picture%>">
+      <div id="profilePicture" class="<%=users.account.picture%>"></div>
       <h3><%=users.account.name%></h3>
     </section>
     <section id="lowProfile">
         <ul>
-            <li><span>Age- </span><%=users.account.age%></li>
-            <li><span>gender/pronouns-</span> <%=users.account.gender%></li>
+          <% if (users.account.age) { %><li><span>Age- </span><%=users.account.age%></li><% } %>
+          <% if (users.account.gender) { %><li><span>gender/pronouns-</span> <%=users.account.gender%></li><% } %>
+          <% if (users.account.info) { %>
           <h4>-info-</h4>
             <li><%=users.account.info%></li>
+            <% } %>
         </ul>
     </main>
   </section>

@@ -9,7 +9,7 @@
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <div class="profilePicture" style="background-image: url('<%=user.account.picture%>');"></div>
+    <div id="profilePicture" class="<%=user.account.picture%>"></div>
     <h1><%= user.username %> Task</h1>
     <main id="showMain">
       <ul>

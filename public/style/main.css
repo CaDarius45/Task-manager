@@ -39,7 +39,7 @@ main{
         background-color: rgba(10, 10, 10, .3);
     }
 }
-
+/* ============================main elements ==================== */
 #userMenu{
     display: flex;
     flex-wrap: wrap;
@@ -63,8 +63,8 @@ main{
     border-radius: 10%;
     overflow: auto;
 }
-
-.profilePictures{
+/* all user profile pictures */
+#profilePictures{
     background-size: cover;
     background-position: center;
     width: 80%;
@@ -75,7 +75,7 @@ main{
     text-align: center;
     background-color: rgba(100, 0, 80, .7);
 }
-
+/* hide user info */
 #info{
     display: none;
 }
@@ -99,7 +99,7 @@ main{
 
 .tasks:hover{
 
-    .profilePictures, #names{
+    #profilePictures, #names{
         display: none;
     }
 
@@ -107,8 +107,8 @@ main{
         display: block;
     }
 }
-
-.profilePicture{
+/* selected user profile picture */
+#profilePicture{
     background-size: cover;
     background-position: center;
     width: 5%;
@@ -120,9 +120,37 @@ main{
     background-color: rgba(100, 0, 80, .7);
     margin: auto;
     margin-top: 1rem;
-    
 }
 
+/* --------------------------- setting profile picture ---------------------------- */
+.flying{
+    background-image: url('/assets/profile/flying.jpg'); 
+}
+
+.cat{
+    background-image: url('/assets/profile/cat.png'); 
+}
+
+.corgi{
+    background-image: url('/assets/profile/corgi.png'); 
+}
+
+.joy{
+    background-image: url('/assets/profile/joy.jpg'); 
+}
+
+.boy{
+    background-image: url('/assets/profile/boy.png'); 
+}
+
+.flower{
+    background-image: url('/assets/profile/flower.jpg'); 
+}
+
+.girl{
+    background-image: url('/assets/profile/girl.png'); 
+}
+/* --------------------disply select user task----------------------- */
 ul{
     display: flex;
     margin: auto;

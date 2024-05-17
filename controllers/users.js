@@ -5,7 +5,8 @@ const router = express.Router();
 
 //Index
 router.get('/', async (req, res) => {
-    const currentUser = await User.findById(req.session.user._id).populate('account')
+    try {
+        const currentUser = await User.findById(req.session.user._id).populate('account')
     if (currentUser.account) {
         const allUsers = await User.find()
         const users = allUsers.filter(xuser => (xuser.id !== currentUser.id && xuser.account))
@@ -13,14 +14,22 @@ router.get('/', async (req, res) => {
     }else{
         res.redirect(`/users/${currentUser._id}/account/new`)
     }
+    } catch (error) {
+        res.redirect('/')
+    }
+    
  });
  //Show
  router.get("/:userid", async (req, res) => {
-    const otherUser = await User.findById(req.params.userid);
-    const allTask = await Task.find({ owner: otherUser.id}).populate('owner')
-    const completeTask = allTask.filter(tas => (tas.complete))
-    const uncompleteTask = allTask.filter(tas => (!tas.complete))
-    res.render("users/show", { user: otherUser, task: allTask,cTask: completeTask,uTask: uncompleteTask});
+    try {
+        const otherUser = await User.findById(req.params.userid);
+        const allTask = await Task.find({ owner: otherUser.id}).populate('owner')
+        const completeTask = allTask.filter(tas => (tas.complete))
+        const uncompleteTask = allTask.filter(tas => (!tas.complete))
+        res.render("users/show", { user: otherUser, task: allTask,cTask: completeTask,uTask: uncompleteTask});
+    } catch (error) {
+        res.redirect('/')
+    }
   });
 
 module.exports = router;

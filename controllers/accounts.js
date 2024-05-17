@@ -2,14 +2,15 @@ const User = require('../models/user.js');
 const express = require('express');
 const router = express.Router();
 
+//profile picture array
 const backgrounds = [ 
-  "/assets/profile/flying.jpg",
-  "/assets/profile/cat.png",
-  "/assets/profile/corgi.png",
-  "/assets/profile/joy.jpg", 
-  "/assets/profile/boy.png", 
-  "/assets/profile/flower.jpg", 
-  "/assets/profile/girl.png"
+  "flying",
+  "cat",
+  "corgi",
+  "joy", 
+  "boy", 
+  "flower", 
+  "girl"
 ]
 
 //index
@@ -18,13 +19,11 @@ router.get('/', async (req, res) => {
     try {
         res.render('accounts/index', {users: currentUser})
       } catch (error) {
-        console.log(`Account index :${error}`); 
         res.redirect(`/users/${res.locals.user._id}/recipes`);
       }
 });
 //New 
 router.get("/new", (req, res) => {
-  console.log(backgrounds)
   res.render('accounts/new', {pic: backgrounds})
 });
 //CREATE
@@ -36,7 +35,6 @@ router.post('/', async (req, res) => {
         await currentUser.save();
         res.redirect(`/users/${currentUser._id}/account`)
     } catch (error) {
-        console.log(`Account create:${error}`);
         res.redirect(`/users/${currentUser._id}/users`)
     }
 });
@@ -48,7 +46,6 @@ router.get('/edit', async (req, res) => {
         const name = curAco.name.split(" ")
         res.render('accounts/edit',{user: curAco, use: name,pic: backgrounds})
     } catch (error) {
-        console.log(`Account Edit:${error}`);
         res.redirect('/account')
     }
   });
@@ -61,22 +58,17 @@ router.put('/', async (req, res) => {
         await currentUser.save()
         res.redirect(`/users/${currentUser._id}/account`)
     } catch (error) {
-      console.log(`Account update:${error}`);
       res.redirect('/')
     }
   });
 //DELETE
 router.delete('/', async (req, res) => {
     try {
-      const currentUser = await User.findById(req.locals.user._id).populate('account');
-      currentUser.account.deleteOne();
-      await currentUser.save();
+      await User.findByIdAndDelete(res.locals.user._id);
       res.redirect('/auth/sign-out');
     } catch (error) {
-      console.log(`delete Account:${error}`);
-      res.redirect('/accounts')
+      res.redirect(`/`)
     }
 });
-
 
 module.exports = router;
