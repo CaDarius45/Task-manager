@@ -5,9 +5,10 @@
 
 </div>
 ## description:
+
 - Task manager is an app that allow a user to keep track of their task that they have asign for themselves and can view others task if they want too. It is easily accessible and easy to keep track of what you have done or need to do for the day, week, or month.
--  [wire frames](https://www.figma.com/design/FIIOlJ2AaoDznLKfBwwBFF/task-Manager?node-id=0-1&t=8dnJxieKUxxAtSBj-0)
--  [ERD](https://lucid.app/lucidchart/a6b3ef62-e251-41a4-9044-615bf1283322/edit?view_items=4xwL2Tlp1MNU&invitationId=inv_39320c98-e253-4411-87fb-c0b59a191f72)
+- [wire frame](https://www.figma.com/design/FIIOlJ2AaoDznLKfBwwBFF/task-Manager?node-id=0-1&t=8dnJxieKUxxAtSBj-0)
+- [ERD](https://lucid.app/lucidchart/a6b3ef62-e251-41a4-9044-615bf1283322/edit?view_items=4xwL2Tlp1MNU&invitationId=inv_39320c98-e253-4411-87fb-c0b59a191f72)
 
 ## App pictures🖼️
 ![Screenshot 2024-05-17 051525](https://github.com/CaDarius45/Task-manager/assets/77362025/a49bffe3-0b16-48e9-8fc9-3c7ba3b494b7)
