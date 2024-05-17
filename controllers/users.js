@@ -18,7 +18,9 @@ router.get('/', async (req, res) => {
  router.get("/:userid", async (req, res) => {
     const otherUser = await User.findById(req.params.userid);
     const allTask = await Task.find({ owner: otherUser.id}).populate('owner')
-    res.render("users/show", { user: otherUser, task: allTask});
+    const completeTask = allTask.filter(tas => (tas.complete))
+    const uncompleteTask = allTask.filter(tas => (!tas.complete))
+    res.render("users/show", { user: otherUser, task: allTask,cTask: completeTask,uTask: uncompleteTask});
   });
 
 module.exports = router;

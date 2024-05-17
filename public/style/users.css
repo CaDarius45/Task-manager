@@ -9,12 +9,13 @@
 body{
     background-color: lightblue;
     text-align: center;
-    
+    background-image: url('/assets/background/cat.png');
 }
 
-#wallpaper{
-    background-size: cover;
-    background-position: center;
+h1{
+    font-style: italic;
+    text-shadow: black 1px 1px;
+    border-bottom: 1px dashed antiquewhite;
 }
 
 main{
@@ -48,6 +49,9 @@ main{
     display: flex;
     flex-direction: column;
     background-color: rgba(10, 10, 10, .3);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
 }
 
 #profilePicture{
@@ -62,11 +66,42 @@ main{
 }
 
 #lowProfile{
-    background-color: darkgray;
-    font-weight: bold;
+    display: flex;
+    > ul{
+       margin: auto;
+    }
+
+    li > span{
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    ul > li{
+        margin-top: 1rem;
+        font-size: 14px;
+    }
 }
 
-select{
+#lowButtons{
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    form > button{
+        margin-top: 5px;
+        background: none;
+        box-shadow: black 1px 1px;
+        width: 14rem;
+        font-size: 30px;
+    }
+
+    form > button:hover{
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+}
+
+#pictures{
     appearance: none;
     background-size: cover;
     background-position: center;
@@ -90,3 +125,38 @@ option{
     border: 2px solid black;
     border-radius: 50%;
 }
+
+#pictures:has(#flying:checked){
+    background-image: url('/assets/profile/flying.jpg'); 
+}
+
+#pictures:has(#cat:checked){
+    background-image: url('/assets/profile/cat.png'); 
+}
+
+#pictures:has(#corgi:checked){
+    background-image: url('/assets/profile/corgi.png'); 
+}
+
+#pictures:has(#joy:checked){
+    background-image: url('/assets/profile/joy.jpg'); 
+}
+
+#pictures:has(#boy:checked){
+    background-image: url('/assets/profile/boy.png'); 
+}
+
+#pictures:has(#flower:checked){
+    background-image: url('/assets/profile/flower.jpg'); 
+}
+
+#pictures:has(#girl:checked){
+    background-image: url('/assets/profile/girl.png'); 
+}
+
+
+/* option::after{
+    color: red;
+    background-color: red;
+    background-image: url('/assets/profile/flying.jpg'); 
+} */

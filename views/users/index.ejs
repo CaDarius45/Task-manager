@@ -9,14 +9,15 @@
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1>Welcome user</h1>
+    <h1>Welcome <%= user.username %></h1>
     <main>
       <section id="userMenu">
       <% use.forEach((us)=>{ %> 
         <a href="/users/<%= user._id %>/users/<%=us._id%>">
           <div class="tasks">
             <div class="profilePictures" style="background-image: url('<%=us.account.picture%>');"></div>
-            <%=us.username%><br><%=us.account.name%>
+            <span id="names"><%=us.username%><br><%=us.account.name%></span>
+            <span id="info"><%=us.account.gender%><br><%=us.account.age%><br><%=us.account.info%></span>
           </div>
         </a>
     <% }) %>

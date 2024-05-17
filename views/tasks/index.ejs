@@ -16,7 +16,6 @@
             <li>There are no task</li>
         <%} else {%>
 
-
         <h2>uncompleted task</h2>
         <%let i = 0; uTask.forEach((tas)=>{ %>
           <li id="li<%=(i % 2)%>"> <a href="/users/<%= tas.owner._id %>/task/<%=tas._id%>"><%=tas.name%></a></li>

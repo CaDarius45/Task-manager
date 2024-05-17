@@ -10,15 +10,19 @@
     <%- include('../partials/navbar') %>
     <h1>Edit your account</h1>
   <main> 
-    <div id="profilePicture" ></div>
     <form action="/users/<%= user._id %>/account?_method=PUT" method="POST">
       <section  id="topProfile">
-        <label for="pictures">pic</label>
+
+        <label for="pictures" >pic</label>
         <select name="picture" id="pictures">
           <option value="none" selected disabled hidden></option>
-          <% pic.forEach((pi)=>{ %> 
-            <option value="<%=pi%>"><%=pi%></option>
-        <% }) %>
+          <option id="flying" value="<%=pic[0]%>">flying</option>
+          <option id="cat" value="<%=pic[1]%>">cat</option>
+          <option id="corgi" value="<%=pic[2]%>">corgi</option>
+          <option id="joy" value="<%=pic[3]%>">joy</option>
+          <option id="boy" value="<%=pic[4]%>">boy</option>
+          <option id="flower" value="<%=pic[5]%>">flower</option>
+          <option id="girl" value="<%=pic[6]%>">girl</option>
         </select>
 
 

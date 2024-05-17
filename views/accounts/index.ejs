@@ -6,30 +6,30 @@
     <link href="/style/users.css" rel="stylesheet">
     <title>My Account</title>
   </head>
-  <body id="wallpaper" style="background-image: url('<%=users.account.picture%>') ;">
+  <body>
     <%- include('../partials/navbar') %>
     <h1><%=users.username%></h1>
     <main> 
-      <section id="topProfile">
+      <section id="topProfile" style="background-image: url('<%=users.account.picture%>');">
       <div id="profilePicture" style="background-image: url('<%=users.account.picture%>');"></div>
       <h3><%=users.account.name%></h3>
     </section>
     <section id="lowProfile">
         <ul>
-          <h4>Age</h4>
-            <li><%=users.account.age%></li>
-          <h4>gender/pronouns</h4>
-            <li><%=users.account.gender%></li>
-          <h4>info</h4>
+            <li><span>Age- </span><%=users.account.age%></li>
+            <li><span>gender/pronouns-</span> <%=users.account.gender%></li>
+          <h4>-info-</h4>
             <li><%=users.account.info%></li>
         </ul>
     </main>
   </section>
+  <section id="lowButtons">
     <form action="/users/<%= users._id %>/account/edit" method="GET">
         <button type="submit">edit your account</button>
       </form>
       <form action="/users/<%= users._id %>/account?_method=DELETE" method="POST">
         <button type="submit">Delete your account</button>
       </form>
+    </section>
   </body>
 </html>

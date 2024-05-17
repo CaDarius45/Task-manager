@@ -12,16 +12,6 @@ const backgrounds = [
   "/assets/profile/girl.png"
 ]
 
-// const backgrounds =  {
-//   fly: "/assets/profile/flying.jpg",
-//   cat: "/assets/profile/cat.png",
-//   dog: "/assets/profile/corgi.png",
-//   joy: "/assets/profile/joy.jpg", 
-//   man: "/assets/profile/boy.png", 
-//   flower: "/assets/profile/flower.jpg", 
-//   lady: "/assets/profile/girl.png"
-// }
-
 //index
 router.get('/', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id)

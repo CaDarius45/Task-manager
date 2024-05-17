@@ -7,8 +7,15 @@
 }
 
 body{
-    background-image: url('/assets/profile/cat.png');
+    background-image: url('/assets/background/cat.png');
     text-align: center;
+}
+
+h1{
+    font-style: italic;
+    color: white;
+    text-shadow: black 2px 2px;
+    border-bottom: 1px ridge white;
 }
 
 main{
@@ -47,6 +54,16 @@ main{
     overflow: auto;
 }
 
+#showMain{
+    background-color: rgba(200, 200, 200, .7);
+    width: 31.1vw; 
+    height: 400px;
+    border: 2px solid white;
+    box-shadow: black 10px 10px;
+    border-radius: 10%;
+    overflow: auto;
+}
+
 .profilePictures{
     background-size: cover;
     background-position: center;
@@ -57,6 +74,10 @@ main{
     font-size: 64px;
     text-align: center;
     background-color: rgba(100, 0, 80, .7);
+}
+
+#info{
+    display: none;
 }
 
 .tasks{
@@ -73,25 +94,69 @@ main{
     width: 220px;
     height: 220px;
     font-size: 20px;
+   
 }
 
-#selUser{
-display: flex;
-background-color: white;
-width: 600px;
-    height: 400px;
-    border: 2px solid white;
-    box-shadow: black 10px 10px;
-    border-radius: 10%;
-    overflow: auto;
+.tasks:hover{
+
+    .profilePictures, #names{
+        display: none;
+    }
+
+   #info{
+        display: block;
+    }
 }
 
+.profilePicture{
+    background-size: cover;
+    background-position: center;
+    width: 5%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 5px ridge black ;
+    font-size: 64px;
+    text-align: center;
+    background-color: rgba(100, 0, 80, .7);
+    margin: auto;
+    margin-top: 1rem;
+    
+}
 
+ul{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 30.8vw; 
+    font-family: "Indie Flower", cursive;
+    font-weight: bold;
+}
 
-#userTask{
+li{
+   font-size: 35px;
+   border-bottom: 1px dashed white;
+}
+
+#li0{
+    background-color: rgba(50, 50, 50, .5);
+    color: white;
+
+}
+
+#li1{
+    background-color: rgba(100, 100, 100, .5);
+    color: black;
+}
+
+p{
+    display: none;
+    margin: auto;
+    padding: 3px;
+}
+
+.userTask:hover{
     justify-content: center;
+    >p{
+        display: block;
+    }
 }
-
-#selUser:hover #userTask {
-    display: block;
-  }

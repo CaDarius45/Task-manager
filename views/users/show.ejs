@@ -3,21 +3,39 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="/style/main.css" rel="stylesheet">
     <title><%= user.username %>></title>
   </head>
   <body>
     <%- include('../partials/navbar') %>
-    <h1><%= user.username %> page</h1>
-    <main>
-      <section id="selUser">
+    <div class="profilePicture" style="background-image: url('<%=user.account.picture%>');"></div>
+    <h1><%= user.username %> Task</h1>
+    <main id="showMain">
       <ul>
-      <% task.forEach((tas)=>{ %>
-        <li><%=tas.name%></li>
-        <div id="userTask">
-        <li><%=tas.descrption%></li></div>
+        <% if(task.length == 0){%>
+            <li>There are no task</li>
+        <%} else {%>
+
+        <h2>uncompleted task</h2>
+        <%let i = 0; uTask.forEach((tas)=>{ %>
+          <div class="userTask">
+          <li id="li<%=(i % 2)%>"><%=tas.name%></li>
+          <p><%=tas.description%></p>
+        </div>
+          <%(i++)%>
+        <% }) %>
+
+        <h2>completed task</h2>
+        <% cTask.forEach((tas)=>{ %> 
+          <div class="userTask">
+          <li id="li<%=(i % 2)%>"><%=tas.name%></li>
+          <p><%=tas.description%></p>
+        </div>
+          <%(i++)%>
         <% }) %>
       </ul>
+      <% } %>
     </section>
     </main>
     
